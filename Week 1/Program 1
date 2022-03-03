@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+void input(int arr[], int size){
+        
+    for(int i = 0 ; i < size ; i++){
+        scanf("%d", &arr[i]);
+    }
+    
+}
+
+void linear_search(int arr[], int size, int key){
+    
+    int comp= 0;
+    
+    for(int i = 0 ; i < size ; i++){
+        
+        if(key == arr[i]) {
+            
+            printf("Element found at %dth index!", i);
+            printf("\nNumber of Comparisons = %d", i+1);
+            return ;
+            
+        }    
+        
+    }
+    
+    printf("Element not found!!");
+    printf("\nNumber of Comparisons = %d", size+1);
+    
+}
+
+int main() {
+    
+    int n, key, l, r, mid, flag;
+    printf("Enter size of the Array: ");
+    scanf("%d", &n);
+    
+    int arr[n];
+    
+    input(arr, n);
+    printf("Enter the Key: ");
+    scanf("%d", &key);
+    linear_search(arr, n, key);
+    
+}
